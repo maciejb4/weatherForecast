@@ -2,5 +2,11 @@
     display: flex;
     justify-content:center;
     text-align:center;
-    padding-top: 10rem;
+    padding-top: 6rem;
+}
+
+.bottom-element {
+    display: flex;
+    justify-content:center;
+    padding-top: 8rem;
 }

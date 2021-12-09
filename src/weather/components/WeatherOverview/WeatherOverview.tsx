@@ -14,14 +14,14 @@ export const WeatherOverview = (props: any) => {
         fetch('https://api.openweathermap.org/data/2.5/onecall?lat=52.4064&lon=16.9252&exclude=hourly,minutely&units=metric&lang=pl&appid=e7dbf2490167397151d02b2e61d9f83b')
             .then(res => res.json())
             .then((data) => {
-                console.log('data',data);
                 setWeatherData(data);
             })
     },[]);
 
     useEffect(() => {
         weatherData && setSelectedItem({el:weatherData.daily[0],index:0});
-    },[weatherData])
+    },[weatherData]);
+
 
     return (
         <div>
@@ -33,7 +33,9 @@ export const WeatherOverview = (props: any) => {
             <div className="container-element">
                 <div style={{display:'flex',justifyContent:'center'}}>
                     {weatherData?.daily.map((el: any,index: number) => (
-                        <div  onClick={() => setSelectedItem({el:el,index:index})}>
+                        <div  onClick={() => setSelectedItem({el:el,index:index})}
+                              style={{cursor: 'pointer'}}
+                        >
                             <WeatherDetails
                                 data={el}
                                 index={index}

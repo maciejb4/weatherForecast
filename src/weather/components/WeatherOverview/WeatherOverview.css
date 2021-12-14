@@ -5,8 +5,25 @@
     padding-top: 6rem;
 }
 
+.inner-container-element {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .bottom-element {
     display: flex;
     justify-content:center;
     padding-top: 8rem;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .container-element {
+        padding-top: 2rem;
+    }
+
+    .bottom-element {
+        padding-top: 2rem;
+    }
 }

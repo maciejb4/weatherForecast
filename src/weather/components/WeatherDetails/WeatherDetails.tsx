@@ -1,10 +1,14 @@
 import { Card } from "react-bootstrap"
 import {useEffect, useState} from "react";
 
+import "./WeatherDetails.css";
+
 
 export const WeatherDetails = (props: any) => {
 
     const [weekday,setWeekday] = useState<any>();
+    const isMobile = window.innerWidth <= 1024;
+
 
     useEffect(() => {
         const date = new Date();
@@ -14,13 +18,14 @@ export const WeatherDetails = (props: any) => {
     });
 
     return (
-        <Card bg='Dark' style={{width: '10rem'}}>
-            <Card.Body>
-                <Card.Title>{weekday}</Card.Title>
-               <div style={{height:'6rem'}}>
-                   <img src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}/>
+        <Card bg='Dark' className={props.active ? "day-active" : "day"}>
+            <Card.Body className="card-body-custom">
+                <Card.Title className="day-name">{weekday}</Card.Title>
+               <div className="day-body">
+                   {!isMobile && (<img src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}/>)}
+                   {isMobile && (<img src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`}/>)}
                </div>
-                <Card.Title>{Math.round(props.data.temp.day)}</Card.Title>
+                <Card.Title>{Math.round(props.data.temp.day)} °C</Card.Title>
             </Card.Body>
         </Card>
     )

@@ -1,0 +1,35 @@
+.day-active {
+    width: 10rem;
+    background-color: rgb(72, 67, 65 ) !important;
+    color:white;
+}
+
+.day {
+    width: 10rem;
+    background-color: #fff;
+}
+
+.day-body {
+    height: 6rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    .day {
+        width: 5.5rem;
+    }
+    .day-active {
+        width: 5.5rem;
+    }
+    .day-name {
+        font-size: 10px !important;
+    }
+    .day-body {
+        height: 3rem;
+    }
+
+    .card-body-custom {
+        padding: 8px 8px;
+    }
+}
+
+

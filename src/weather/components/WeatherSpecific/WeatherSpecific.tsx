@@ -26,7 +26,7 @@ export const WeatherSpecific = (props: any) => {
                         <div style={{height:'7rem'}}>
                             <img src={`http://openweathermap.org/img/wn/${props.data.el.weather[0].icon}@2x.png`}/>
                         </div>
-                        <Card.Title>{Math.floor(props.data.el.temp.day)}</Card.Title>
+                        <Card.Title>{Math.round(props.data.el.temp.day)}</Card.Title>
                     </div>
                 </div>
                 <div className="col-md-8 col-12">

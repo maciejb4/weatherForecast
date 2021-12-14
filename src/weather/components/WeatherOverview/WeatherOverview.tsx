@@ -20,7 +20,10 @@ export const WeatherOverview = (props: any) => {
     },[]);
 
     useEffect(() => {
-        weatherData && setSelectedItem({el:weatherData.daily[0],index:0});
+        if(weatherData) {
+            setSelectedItem({el:weatherData.daily[0],index:0});
+            setChosen(weatherData.daily[0]);
+        }
     },[weatherData]);
 
     const selectItem = (el : any, index : any) => {

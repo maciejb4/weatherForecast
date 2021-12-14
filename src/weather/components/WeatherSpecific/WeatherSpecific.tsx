@@ -2,6 +2,7 @@ import {Card, Tab, Table, Tabs} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import { BsSunset, BsSunrise } from 'react-icons/bs'
 import { IconContext } from "react-icons";
+import './WeatherSpecific.css';
 
 
 export const WeatherSpecific = (props: any) => {
@@ -30,8 +31,8 @@ export const WeatherSpecific = (props: any) => {
                     </div>
                 </div>
                 <div className="col-md-8 col-12">
-                    <Tabs defaultActiveKey="temperature" id="uncontrolled-tab-example" className="mb-3">
-                        <Tab eventKey="temperature" title="Temperature">
+                    <Tabs defaultActiveKey="temperature" className="mb-3">
+                        <Tab eventKey="temperature" title="Temperature" className="temperature-tab">
                             <Table borderless>
                                 <thead>
                                 <tr>
